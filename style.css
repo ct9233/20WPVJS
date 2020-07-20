@@ -31,6 +31,7 @@ h1 {
 .filter {
     width: 100%;
     padding: 12px;
+    font-size: 16px;
     background-color: #9faec9;
     border-color: #2e506f;
     border-radius: 5px;
