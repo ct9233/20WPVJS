@@ -119,3 +119,8 @@ input{
     height: 100%;
     z-index: 1;
 }
+
+.end-game-container button {
+    background-color: #b5d6f7;
+    color: #000;
+}
