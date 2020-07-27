@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color:#454c68;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+input:focus, button:focus {
+    outline: none;
+}
+
+header {
+    background-image: url('http://api.thumbr.it/whitenoise-361x370.png?background=292d3eff&noise=454c68&density=24&opacity=75');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #9faeda;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+header * {
+    z-index: 1;
+}
+
+header h1 {
+    margin: 0 0 30px;
+}
