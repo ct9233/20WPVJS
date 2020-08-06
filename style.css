@@ -24,6 +24,27 @@ p {
     margin: 0;
 }
 
+img {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.img-container {
+    position: relative;
+}
+
+.overlay {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background: #517ba3;
+    opacity: 0.8;
+    border-radius: 45%;
+}
+
 .play-again {
     padding: 8px 15px;
     border: 0;
