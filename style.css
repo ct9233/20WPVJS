@@ -48,7 +48,8 @@ img {
 .play-again {
     padding: 8px 15px;
     border: 0;
-    background: #b3b3b3;
+    background: #37807c;
+    color: #000;
     border-radius: 5px;
     margin-top: 10px;
 }
