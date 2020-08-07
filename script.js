@@ -74,13 +74,24 @@ function drawScore() {
     ctx.fillText(`Score: ${score}`, canvas.width - 100, 30)
 }
 
+// Randomly pick color for brick
+function colorBrick() {
+    let x = Math.floor(Math.random() * 5);
+    
+    return x === 4 ? '#e91e63'
+        : x === 3 ? '#7b1fa2'
+        : x === 2 ? '#1a237e'
+        : x === 1 ? '#009688'
+        : '#ffff00';
+}
+
 // Draw bricks on canvas
 function drawBricks() {
     bricks.forEach(column => {
         column.forEach(brick => {
             ctx.beginPath();
             ctx.rect(brick.x, brick.y, brick.w, brick.h);
-            ctx.fillStyle = brick.visible ? '#15008b' : 'transparent';
+            ctx.fillStyle = brick.visible ? colorBrick() : 'transparent';
             ctx.fill();
             ctx.closePath();
         })
