@@ -5,9 +5,11 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 let score = 0;
+let colNum = 1;
 
 const brickRowCount = 9;
 const brickColumnCount = 5;
+const colors = ['#e91e63', '#7b1fa2', '#1a237e', '#009688', '#ffff00', '#3bb9ff'];
 
 // Create ball props
 const ball = {
@@ -74,17 +76,6 @@ function drawScore() {
     ctx.fillText(`Score: ${score}`, canvas.width - 100, 30)
 }
 
-// Randomly pick color for brick
-function colorBrick() {
-    let x = Math.floor(Math.random() * 5);
-    
-    return x === 4 ? '#e91e63'
-        : x === 3 ? '#7b1fa2'
-        : x === 2 ? '#1a237e'
-        : x === 1 ? '#009688'
-        : '#ffff00';
-}
-
 // Draw bricks on canvas
 function drawBricks() {
     bricks.forEach(column => {
@@ -96,6 +87,22 @@ function drawBricks() {
             ctx.closePath();
         })
     })
+}
+
+// Randomly pick color for brick
+function colorBrick() {
+    // if (score !== 0) {
+    //     if (colNum < 5) {
+    //         colNum++;
+    //     } else {
+    //         colNum = 0;
+    //     }
+    // } else {
+    //     colNum;
+    // }
+    // console.log(colNum)
+    return colors[colNum];
+
 }
 
 // Move paddle on canvas
@@ -154,6 +161,7 @@ function moveBall() {
     if (ball.y + ball.size > canvas.height) {
         showAllBricks();
         score = 0;
+        colNum = Math.floor(Math.random() * 6);
     }
 }
 
